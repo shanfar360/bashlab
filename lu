@@ -1,0 +1,34 @@
+#!/bin/bash
+# lu - look someone up in the phone book
+
+#!/bin/bash
+# lu - look someone up in the phone book
+
+if [ "$1" = "--add" ]; then
+    # Example: ./lu --add "Name" "Phone"
+    if [ -z "$2" ] || [ -z "$3" ]; then
+        echo "Usage: $0 --add \"Name\" \"Phone\""
+        exit 1
+    fi
+    echo "$2: $3" >> phonebook.txt
+    echo "Added $2 with phone $3"
+    exit 0
+fi
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <name>"
+    exit 1
+fi
+
+if [ "$1" = "--remove" ]; then
+    # Usage: ./lu --remove "Name"
+    if [ -z "$2" ]; then
+        echo "Usage: $0 --remove \"Name\""
+        exit 1
+    fi
+    grep -iv "$2" phonebook.txt > phonebook.tmp && mv phonebook.tmp phonebook.txt
+    echo "Removed entries matching \"$2\""
+    exit 0
+fi
+grep -i "$1" phonebook.txt
+

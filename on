@@ -1,0 +1,10 @@
+#!/bin/bash
+user="$1"
+if who | grep "$user"
+then
+echo "a user is logon"
+else 
+	" a user does not logon"
+fi
+
+

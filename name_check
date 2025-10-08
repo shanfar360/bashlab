@@ -1,0 +1,10 @@
+#!/bin/bash
+# Assign the value to variable
+name=Julio
+if [ "$name" = "Julio" ]
+then
+	echo "Would you like to play a game?"
+else
+	echo "Name is not Julio."
+fi
+
