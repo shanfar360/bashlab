@@ -1,0 +1,15 @@
+# Ignore backup archives
+*.tar.gz
+
+# Ignore temporary or log files
+*.log
+*.tmp
+*.bak
+*~
+
+# Ignore system files
+.DS_Store
+
+# Ignore vim swap files
+*.swp
+

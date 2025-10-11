@@ -1,10 +1,15 @@
 #!/bin/bash
-user="$1"
-if who | grep "$user"
+if [ "$#" -ne 1 ]
 then
-echo "a user is logon"
-else 
-	" a user does not logon"
+	echo "Incorrect number of arguments"
+	echo "Usage: on user"
+else
+	user="$1"
+	if who | grep "$user" > /dev/null
+	then
+		echo "a user is logon"
+	else 
+		echo " a user does not logon"
+	fi
 fi
-
 
